@@ -5,24 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AssurLibre - Experts en résiliation d'assurance</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <nav class="glass-nav">
         <div class="logo">AssurLibre</div>
         <ul>
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#premium">Nos offres</a></li>
+            <li><a href="#hero">Accueil</a></li>
+            <li><a href="#premium-service">Services</a></li>
+            <li><a href="#avantages">Avantages</a></li>
             <li><a href="#generator">Résiliation</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#process">Processus</a></li>
         </ul>
     </nav>
 
     <main>
         <section id="hero" class="glass-hero">
-            <h1>Libérez-vous de vos contrats d'assurance coûteux</h1>
-            <p>Experts en résiliation d'assurance : nous gérons tout de A à Z</p>
-            <button class="cta-button">Découvrir nos services</button>
+            <h1>Simplifiez votre résiliation d'assurance</h1>
+            <p class="hero-subtitle">Notre expertise juridique à votre service pour optimiser vos contrats</p>
+            <button class="cta-button" onclick="location.href='#premium-service'">Découvrir nos solutions</button>
         </section>
 
         <section id="premium-service" class="glass-section premium">
@@ -97,7 +98,8 @@
             <form id="resiliation-form">
                 <div class="form-group">
                     <label>Type d'assurance</label>
-                    <select name="type">
+                    <select name="type" required>
+                        <option value="">Sélectionnez votre type d'assurance</option>
                         <option value="auto">Assurance Auto</option>
                         <option value="habitation">Assurance Habitation</option>
                         <option value="sante">Assurance Santé</option>
@@ -106,7 +108,8 @@
                 </div>
                 <div class="form-group">
                     <label>Motif de résiliation</label>
-                    <select name="motif">
+                    <select name="motif" required>
+                        <option value="">Sélectionnez votre motif</option>
                         <option value="hamon">Loi Hamon (après 1 an)</option>
                         <option value="chatel">Loi Chatel</option>
                         <option value="augmentation">Augmentation de tarif</option>
@@ -115,11 +118,11 @@
                 </div>
                 <div class="form-group">
                     <label>Vos informations</label>
-                    <input type="text" placeholder="Nom et Prénom">
-                    <input type="text" placeholder="Numéro de contrat">
-                    <input type="text" placeholder="Adresse">
-                    <input type="tel" placeholder="Téléphone">
-                    <input type="email" placeholder="Email">
+                    <input type="text" placeholder="Nom et Prénom" required>
+                    <input type="text" placeholder="Numéro de contrat" required>
+                    <input type="text" placeholder="Adresse" required>
+                    <input type="tel" placeholder="Téléphone" required>
+                    <input type="email" placeholder="Email" required>
                 </div>
                 <button type="submit" class="cta-button">Démarrer ma résiliation</button>
             </form>
@@ -149,8 +152,16 @@
 
     <footer class="glass-footer">
         <div class="footer-content">
-            <p>AssurLibre - Experts en résiliation d'assurance</p>
-            <p>Contactez-nous : 01 23 45 67 89</p>
+            <div class="footer-section">
+                <h4>AssurLibre</h4>
+                <p>Experts en résiliation d'assurance</p>
+                <p>Disponible du lundi au vendredi de 9h à 19h</p>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <p>Téléphone : 01 23 45 67 89</p>
+                <p>Email : contact@assurlibre.fr</p>
+            </div>
         </div>
     </footer>
 </body>

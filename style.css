@@ -363,3 +363,42 @@ body::before {
 .step:nth-child(3) {
     animation-delay: 0.4s;
 }
+
+/* Centrage global des textes */
+.glass-hero, 
+.premium, 
+.glass-section, 
+.service-card, 
+.footer-content,
+.glass-form,
+.form-group,
+.step,
+.benefits,
+.testimonials,
+.guarantees,
+.footer-section {
+    text-align: center;
+}
+
+/* Centrage des éléments de texte spécifiques */
+h1, h2, h3, h4, p {
+    text-align: center;
+}
+
+/* Exception pour les listes qui doivent rester alignées */
+.benefits li {
+    text-align: left;
+}
+
+/* Centrage des éléments de formulaire */
+.form-group label,
+.form-group input,
+.form-group select {
+    text-align: center;
+}
+
+/* Ajout de marges pour améliorer l'espacement */
+.service-card,
+.premium-card {
+    margin: 20px auto;
+}

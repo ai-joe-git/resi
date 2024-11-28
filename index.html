@@ -3,133 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AssurLibre - Résiliation d'assurance simplifiée</title>
+    <title>AssurLibre - Simplifiez votre résiliation</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">AssurLibre</div>
-        <ul class="nav-links">
-            <li><a href="#accueil">Accueil</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#avantages">Avantages</a></li>
-            <li><a href="#resiliation">Résiliation</a></li>
-            <li><a href="#processus">Processus</a></li>
-        </ul>
+    <nav class="nav-apple">
+        <div class="nav-wrapper">
+            <a href="#" class="logo">AssurLibre</a>
+            <ul class="nav-menu">
+                <li><a href="#services">Services</a></li>
+                <li><a href="#process">Processus</a></li>
+                <li><a href="#droits">Vos droits</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><button class="nav-cta">Résilier maintenant</button></li>
+            </ul>
+        </div>
     </nav>
 
-    <main>
-        <section id="hero" class="hero-section">
-            <h1>Simplifiez votre résiliation d'assurance</h1>
-            <p class="subtitle">Notre expertise juridique à votre service pour optimiser vos contrats</p>
-            <button class="cta-button">Découvrir nos solutions</button>
-        </section>
+    <header class="hero-apple">
+        <h1>Résiliation<br>Simplifiée.</h1>
+        <p class="hero-subtitle">Une nouvelle approche de la résiliation d'assurance.</p>
+        <a href="#" class="cta-link">Découvrir nos solutions <span>→</span></a>
+    </header>
 
-        <section id="process" class="process-section">
-            <div class="step-container">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <h2>Analyse de votre situation</h2>
-                    <p>Étude complète de votre contrat et identification des leviers juridiques</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <h2>Stratégie personnalisée</h2>
-                    <p>Élaboration d'une stratégie de résiliation adaptée à votre cas</p>
-                </div>
-
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <h2>Gestion complète</h2>
-                    <p>Nous prenons en charge toutes les démarches jusqu'à la confirmation</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="premium" class="premium-section">
-            <h2>Un accompagnement premium pour votre résiliation</h2>
-            <div class="premium-card">
-                <h3>Expertise juridique dédiée</h3>
-                <p class="price">À partir de 89€</p>
-                <ul class="benefits">
-                    <li>✓ Analyse approfondie de votre contrat</li>
-                    <li>✓ Identification des clauses abusives</li>
-                    <li>✓ Stratégie de résiliation personnalisée</li>
-                    <li>✓ Suivi jusqu'à la confirmation</li>
-                </ul>
-                <button class="premium-button">Commencer ma résiliation</button>
-            </div>
-        </section>
-
-        <section id="rights" class="rights-section">
-            <h2>Vos droits en matière de résiliation</h2>
-            <div class="rights-container">
-                <div class="right-card">
-                    <h3>Loi Hamon</h3>
-                    <p>Résiliation possible à tout moment après 1 an d'engagement, sans frais ni justification</p>
-                </div>
-                <div class="right-card">
-                    <h3>Loi Chatel</h3>
-                    <p>Votre assureur doit vous informer de la reconduction tacite. Sans cela, résiliation possible à tout moment</p>
-                </div>
-                <div class="right-card">
-                    <h3>Augmentation de tarif</h3>
-                    <p>Droit de résiliation sous 20 jours après réception de l'avis d'échéance</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="form" class="form-section">
-            <h2>Commencez votre résiliation maintenant</h2>
-            <form class="resiliation-form">
-                <div class="form-group">
-                    <label>Type d'assurance</label>
-                    <select required>
-                        <option value="">Sélectionnez votre type d'assurance</option>
-                        <option value="auto">Assurance Auto</option>
-                        <option value="habitation">Assurance Habitation</option>
-                        <option value="sante">Assurance Santé</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Motif de résiliation</label>
-                    <select required>
-                        <option value="">Sélectionnez votre motif</option>
-                        <option value="hamon">Loi Hamon</option>
-                        <option value="chatel">Loi Chatel</option>
-                        <option value="augmentation">Augmentation de tarif</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label>Vos informations</label>
-                    <input type="text" placeholder="Nom et Prénom" required>
-                    <input type="text" placeholder="Numéro de contrat" required>
-                    <input type="text" placeholder="Adresse" required>
-                    <input type="tel" placeholder="Téléphone" required>
-                    <input type="email" placeholder="Email" required>
-                </div>
-
-                <button type="submit" class="submit-button">Démarrer ma résiliation</button>
-            </form>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>AssurLibre</h4>
-                <p>Experts en résiliation d'assurance</p>
-                <p>Disponible du lundi au vendredi de 9h à 19h</p>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <p>Téléphone : 01 23 45 67 89</p>
-                <p>Email : contact@assurlibre.fr</p>
-            </div>
+    <section class="features-grid">
+        <div class="feature">
+            <div class="feature-number">1</div>
+            <h3>Analyse complète</h3>
+            <p>Étude approfondie de votre contrat et identification des leviers juridiques</p>
         </div>
-    </footer>
+        <!-- [Autres features similaires] -->
+    </section>
+
+    <section class="premium-offer">
+        <div class="offer-content">
+            <h2>Service Premium</h2>
+            <p class="price">À partir de 89€</p>
+            <ul class="premium-features">
+                <li>Analyse approfondie de votre contrat</li>
+                <li>Identification des clauses abusives</li>
+                <li>Stratégie personnalisée</li>
+                <li>Suivi complet jusqu'à confirmation</li>
+            </ul>
+            <button class="premium-cta">En savoir plus</button>
+        </div>
+    </section>
 </body>
 </html>

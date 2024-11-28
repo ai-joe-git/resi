@@ -3,91 +3,500 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AssurLibre - Résiliation d'assurance simplifiée</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AssurLibre - La résiliation simplifiée</title>
+    <style>
+        @font-face {
+            font-family: 'SF Pro Display';
+            src: local('SF Pro Display');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        body {
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 3rem;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-link:hover {
+            opacity: 1;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .cta-button {
+            background: #2997FF;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            background: #147CE5;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 120px 10% 60px;
+            position: relative;
+        }
+
+        .hero h1 {
+            font-size: 96px;
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 24px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .section-title {
+            font-size: 48px;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .features {
+            padding: 100px 10%;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            transition: transform 0.3s ease;
+            min-height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-item h3 {
+            font-size: 24px;
+            margin-bottom: 1rem;
+        }
+
+        .premium-card {
+            background: linear-gradient(45deg, #1E1E1E, #2D2D2D);
+            border-radius: 30px;
+            padding: 60px;
+            margin: 100px 10%;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+
+        .price {
+            font-size: 72px;
+            margin: 30px 0;
+            font-weight: 700;
+        }
+
+        .benefits-list {
+            max-width: 600px;
+            margin: 30px auto;
+            text-align: left;
+        }
+
+        .benefits-list li {
+            margin: 15px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .benefits-list li:before {
+            content: "✓";
+            color: #2997FF;
+            position: absolute;
+            left: 0;
+        }
+
+        .contact-form {
+            max-width: 800px;
+            margin: 100px auto;
+            padding: 60px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 15px;
+            margin: 10px 0;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            border-radius: 10px;
+            color: #fff;
+            transition: all 0.3s ease;
+            font-size: 16px;
+        }
+
+        .form-input:focus {
+            background: rgba(255, 255, 255, 0.15);
+            outline: none;
+        }
+
+        .testimonials {
+            padding: 100px 10%;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .testimonial-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px;
+            border-radius: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .testimonial-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .testimonial-text {
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            color: #2997FF;
+            font-weight: 500;
+        }
+
+        .testimonial-savings {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-top: 5px;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 80px 10% 40px;
+            margin-top: 100px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h4 {
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-column a:hover {
+            opacity: 1;
+        }
+
+        @media (max-width: 1024px) {
+            .feature-grid, .testimonial-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 48px;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .feature-grid, .testimonial-grid, .footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .premium-card {
+                padding: 30px;
+                margin: 50px 5%;
+            }
+
+            .contact-form {
+                padding: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
     <nav class="navbar">
-        <div class="nav-content">
-            <div class="logo">AssurLibre</div>
-            <ul class="nav-menu">
-                <li><a href="#accueil">Accueil</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#avantages">Avantages</a></li>
-                <li><a href="#resiliation">Résiliation</a></li>
-                <li><a href="#processus">Processus</a></li>
-            </ul>
+        <div class="logo">AssurLibre</div>
+        <div class="nav-links">
+            <a href="#features" class="nav-link">Fonctionnalités</a>
+            <a href="#pricing" class="nav-link">Tarifs</a>
+            <a href="#testimonials" class="nav-link">Témoignages</a>
+            <a href="#contact" class="nav-link">Contact</a>
+            <a href="#contact" class="cta-button">Résilier maintenant</a>
         </div>
     </nav>
 
     <section class="hero">
-        <h1>Simplifiez votre résiliation d'assurance</h1>
-        <p>Notre expertise juridique à votre service pour optimiser vos contrats</p>
-        <button class="cta-button">Découvrir nos solutions</button>
+        <h1>La résiliation.<br>Simplifiée.</h1>
+        <p>Une nouvelle approche pour reprendre le contrôle de vos assurances. Simple, rapide et efficace.</p>
+        <a href="#contact" class="cta-button">Commencer maintenant →</a>
     </section>
 
-    <section class="process">
-        <div class="process-steps">
-            <div class="step">
-                <div class="step-number">1</div>
-                <h2>Analyse de votre situation</h2>
-                <p>Étude complète de votre contrat et identification des leviers juridiques</p>
+    <section id="features" class="features">
+        <h2 class="section-title">Pourquoi choisir AssurLibre ?</h2>
+        <div class="feature-grid">
+            <div class="feature-item">
+                <h3>Libérez-vous</h3>
+                <p>Libérez-vous des contrats qui vous coûtent trop cher. Notre expertise vous permet de faire les meilleurs choix pour votre budget.</p>
             </div>
-            <div class="step">
-                <div class="step-number">2</div>
-                <h2>Stratégie personnalisée</h2>
-                <p>Élaboration d'une stratégie de résiliation adaptée à votre cas</p>
+            <div class="feature-item">
+                <h3>Expertise juridique</h3>
+                <p>Une expertise juridique pointue et un processus simplifié pour vous garantir une résiliation en toute sécurité.</p>
             </div>
-            <div class="step">
-                <div class="step-number">3</div>
-                <h2>Gestion complète</h2>
-                <p>Nous prenons en charge toutes les démarches jusqu'à la confirmation</p>
+            <div class="feature-item">
+                <h3>Économisez</h3>
+                <p>Économisez jusqu'à 40% sur vos assurances grâce à notre service d'optimisation des contrats.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Technologie</h3>
+                <p>La technologie au service de votre pouvoir d'achat. Un processus 100% digital et sécurisé.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Satisfaction garantie</h3>
+                <p>Plus de 10 000 clients satisfaits nous font confiance. Rejoignez-les dès aujourd'hui.</p>
+            </div>
+            <div class="feature-item">
+                <h3>Support dédié</h3>
+                <p>Une équipe d'experts à votre écoute pour vous accompagner à chaque étape de votre résiliation.</p>
             </div>
         </div>
     </section>
 
-    <section class="premium">
-        <h2>Expertise juridique dédiée</h2>
-        <div class="price">À partir de 89€</div>
-        <ul class="features">
-            <li>✓ Analyse approfondie de votre contrat</li>
-            <li>✓ Identification des clauses abusives</li>
-            <li>✓ Stratégie de résiliation personnalisée</li>
-            <li>✓ Suivi jusqu'à la confirmation</li>
+    <section id="pricing" class="premium-card">
+        <h2>Premium</h2>
+        <div class="price">49€</div>
+        <p>Résiliation garantie ou remboursé</p>
+        <ul class="benefits-list">
+            <li>Prise en charge complète de votre dossier</li>
+            <li>Analyse personnalisée de vos contrats</li>
+            <li>Accompagnement juridique</li>
+            <li>Suivi en temps réel</li>
+            <li>Garantie satisfaction</li>
         </ul>
-        <button class="premium-button">Commencer ma résiliation</button>
+        <a href="#contact" class="cta-button">Commencer maintenant</a>
     </section>
 
-    <section class="form">
-        <h2>Commencez votre résiliation maintenant</h2>
-        <form class="resiliation-form">
+    <section id="testimonials" class="testimonials">
+        <h2 class="section-title">Ils nous font confiance</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-item">
+                <p class="testimonial-text">"Service impeccable. J'ai économisé plus de 500€ par an sur mes assurances."</p>
+                <div class="testimonial-author">Marie D.</div>
+                <div class="testimonial-savings">Économie : 500€/an</div>
+            </div>
+            <div class="testimonial-item">
+                <p class="testimonial-text">"Processus simple et efficace. Je recommande vivement leur service."</p>
+                <div class="testimonial-author">Pierre L.</div>
+                <div class="testimonial-savings">Économie : 350€/an</div>
+            </div>
+            <div class="testimonial-item">
+                <p class="testimonial-text">"Une équipe réactive et professionnelle. Résultat garanti !"</p>
+                <div class="testimonial-author">Sophie M.</div>
+                <div class="testimonial-savings">Économie : 420€/an</div>
+            </div>
+            <div class="testimonial-item">
+                <p class="testimonial-text">"Enfin une solution simple pour gérer mes assurances !"</p>
+                <div class="testimonial-author">Thomas B.</div>
+                <div class="testimonial-savings">Économie : 600€/an</div>
+            </div>
+            <div class="testimonial-item">
+                <p class="testimonial-text">"Service client exceptionnel et résultats au rendez-vous."</p>
+                <div class="testimonial-author">Julie R.</div>
+                <div class="testimonial-savings">Économie : 480€/an</div>
+            </div>
+            <div class="testimonial-item">
+                <p class="testimonial-text">"Je recommande à 100%. Transparent et efficace."</p>
+                <div class="testimonial-author">Laurent P.</div>
+                <div class="testimonial-savings">Économie : 550€/an</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-form">
+        <h2 class="section-title">Contactez-nous</h2>
+        <form>
             <div class="form-group">
-                <label>Type d'assurance</label>
-                <select required>
-                    <option value="">Sélectionnez votre type d'assurance</option>
-                    <option value="auto">Assurance Auto</option>
-                    <option value="habitation">Assurance Habitation</option>
-                    <option value="sante">Assurance Santé</option>
-                </select>
+                <input type="text" class="form-input" placeholder="Nom complet" required>
             </div>
             <div class="form-group">
-                <label>Motif de résiliation</label>
-                <select required>
-                    <option value="">Sélectionnez votre motif</option>
-                    <option value="hamon">Loi Hamon</option>
-                    <option value="chatel">Loi Chatel</option>
-                    <option value="augmentation">Augmentation de tarif</option>
-                </select>
+                <input type="email" class="form-input" placeholder="Email" required>
             </div>
             <div class="form-group">
-                <input type="text" placeholder="Nom et Prénom" required>
-                <input type="text" placeholder="Numéro de contrat" required>
-                <input type="text" placeholder="Adresse" required>
-                <input type="tel" placeholder="Téléphone" required>
-                <input type="email" placeholder="Email" required>
+                <input type="tel" class="form-input" placeholder="Téléphone" required>
             </div>
-            <button type="submit" class="submit-button">Démarrer ma résiliation</button>
+            <div class="form-group">
+                <textarea class="form-input" placeholder="Votre message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="cta-button">Envoyer</button>
         </form>
     </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h4>AssurLibre</h4>
+                <ul>
+                    <li><a href="#features">À propos</a></li>
+                    <li><a href="#pricing">Nos services</a></li>
+                    <li><a href="#testimonials">Témoignages</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Services</h4>
+                <ul>
+                    <li><a href="#">Résiliation</a></li>
+                    <li><a href="#">Optimisation</a></li>
+                    <li><a href="#">Conseil</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Légal</h4>
+                <ul>
+                    <li><a href="#">Mentions légales</a></li>
+                    <li><a href="#">Politique de confidentialité</a></li>
+                    <li><a href="#">CGV</a></li>
+                    <li><a href="#">RGPD</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Newsletter</h4>
+                <div class="form-group">
+                    <input type="email" class="form-input" placeholder="Votre email">
+                    <button class="cta-button">S'abonner</button>
+                </div>
+            </div>
+        </div>
+        <div class="logo">AssurLibre</div>
+        <p>© 2024 AssurLibre. Tous droits réservés.</p>
+    </footer>
+
+    <script>
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Intersection Observer for animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.feature-item, .testimonial-item').forEach((el) => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease-out';
+            observer.observe(el);
+        });
+    </script>
 </body>
 </html>

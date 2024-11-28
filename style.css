@@ -1,404 +1,139 @@
-/* Animated Background */
-@keyframes gradientAnimation {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
-
 :root {
-    --glass-bg: rgba(255, 255, 255, 0.1);
-    --glass-border: rgba(255, 255, 255, 0.2);
-    --primary: #60a5fa;
-    --secondary: #3b82f6;
-    --accent: #2563eb;
-    --light-blue: #93c5fd;
-    --gradient: linear-gradient(-45deg, #60a5fa, #3b82f6, #2563eb, #1d4ed8);
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+    --primary-gradient: linear-gradient(135deg, #4158D0, #C850C0, #4158D0);
+    --glass-bg: rgba(255, 255, 255, 0.08);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --text-color: #ffffff;
+    --accent: #C850C0;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    background: var(--gradient);
+    font-family: 'Inter', sans-serif;
+    background: var(--primary-gradient);
     background-size: 400% 400%;
     animation: gradientAnimation 15s ease infinite;
-    color: white;
+    color: var(--text-color);
+    margin: 0;
     line-height: 1.6;
-    min-height: 100vh;
-    position: relative;
 }
 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: 
-        radial-gradient(circle at 15% 50%, rgba(96, 165, 250, 0.2) 0%, transparent 25%),
-        radial-gradient(circle at 85% 30%, rgba(37, 99, 235, 0.2) 0%, transparent 25%);
-    animation: backgroundShift 20s ease-in-out infinite alternate;
-    z-index: -1;
-}
-
-@keyframes backgroundShift {
-    0% {
-        transform: translateX(-5%) translateY(-5%);
-    }
-    100% {
-        transform: translateX(5%) translateY(5%);
-    }
+/* Animation du fond */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Navigation */
 .glass-nav {
-    position: fixed;
-    width: 100%;
-    background: rgba(59, 130, 246, 0.1);
-    backdrop-filter: blur(10px);
-    padding: 1.2rem 2rem;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    padding: 1.5rem 3rem;
 }
 
 .glass-nav .logo {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--light-blue);
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    letter-spacing: 1px;
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #fff, #C850C0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
-.glass-nav ul {
-    display: flex;
-    gap: 2.5rem;
-    list-style: none;
-}
-
-.glass-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.1rem;
-    transition: all 0.3s ease;
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-}
-
-.glass-nav a:hover {
-    background: rgba(255, 255, 255, 0.1);
-    color: var(--light-blue);
-}
-
-/* Hero Section */
+/* Sections */
 .glass-hero {
-    min-height: 100vh;
+    min-height: 90vh;
+    padding: 4rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    text-align: center;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    position: relative;
-    overflow: hidden;
-}
-
-.glass-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 20% 50%, rgba(147, 197, 253, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 80% 50%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
-    animation: pulseBackground 8s ease-in-out infinite alternate;
-}
-
-@keyframes pulseBackground {
-    0% {
-        opacity: 0.5;
-    }
-    100% {
-        opacity: 1;
-    }
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, transparent 70%);
 }
 
 .glass-hero h1 {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    max-width: 900px;
-    position: relative;
-    background: linear-gradient(to right, #ffffff, var(--light-blue));
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    text-align: center;
+    background: linear-gradient(to right, #fff, #C850C0);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    line-height: 1.2;
 }
 
-/* Premium Section */
-.premium {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    margin: 4rem auto;
-    padding: 4rem 2rem;
-    border-radius: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.premium::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: 
-        radial-gradient(circle at 0% 0%, rgba(96, 165, 250, 0.1) 0%, transparent 50%),
-        radial-gradient(circle at 100% 100%, rgba(37, 99, 235, 0.1) 0%, transparent 50%);
-    animation: shimmerEffect 10s ease-in-out infinite;
-}
-
-@keyframes shimmerEffect {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.02); }
-    100% { transform: scale(1); }
-}
-
-.value-proposition {
-    display: flex;
-    justify-content: center;
-    margin: 3rem 0;
-    position: relative;
-}
-
+/* Cards */
 .premium-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
     padding: 3rem;
-    text-align: center;
-    max-width: 500px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.premium-card::after {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: linear-gradient(
-        45deg,
-        transparent,
-        rgba(255, 255, 255, 0.1),
-        transparent
-    );
-    transform: rotate(45deg);
-    animation: shimmer 3s infinite;
-}
-
-@keyframes shimmer {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .premium-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
-}
-
-.price-tag {
-    font-size: 3rem;
-    font-weight: bold;
-    background: linear-gradient(to right, var(--light-blue), var(--accent));
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    margin: 1.5rem 0;
-}
-
-/* Service Cards */
-.service-card {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    border-radius: 15px;
-    padding: 2rem;
-    transition: all 0.4s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.service-card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    border-color: var(--light-blue);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
 }
 
 /* Buttons */
-.cta-button,
-.premium-button {
-    background: linear-gradient(45deg, var(--secondary), var(--accent));
-    color: white;
+.cta-button {
+    background: linear-gradient(45deg, #4158D0, #C850C0);
     border: none;
-    padding: 1.2rem 2.5rem;
-    border-radius: 30px;
-    font-size: 1.2rem;
-    font-weight: 500;
+    padding: 1.2rem 3rem;
+    border-radius: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
     cursor: pointer;
-    transition: all 0.4s ease;
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
 
-.cta-button::before,
-.premium-button::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.2),
-        transparent
-    );
-    transition: 0.5s;
-}
-
-.cta-button:hover::before,
-.premium-button:hover::before {
-    left: 100%;
-}
-
-.cta-button:hover,
-.premium-button:hover {
+.cta-button:hover {
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4);
-    background: linear-gradient(45deg, var(--accent), var(--secondary));
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
 }
 
-/* Form Styles */
+/* Form */
 .glass-form {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 3rem;
 }
 
 .form-group input,
 .form-group select {
     background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    transition: all 0.3s ease;
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 1rem;
+    color: white;
+    font-size: 1rem;
 }
 
-.form-group input:focus,
-.form-group select:focus {
-    border-color: var(--light-blue);
-    box-shadow: 0 0 0 2px rgba(96, 165, 250, 0.2);
-    outline: none;
-}
-
-/* Footer */
-.glass-footer {
-    background: linear-gradient(to top, rgba(37, 99, 235, 0.9), rgba(37, 99, 235, 0.7));
-    backdrop-filter: blur(10px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .glass-nav ul {
-        display: none;
-    }
-
-    .glass-hero h1 {
-        font-size: 2.5rem;
-    }
-
-    .premium-card {
-        margin: 1rem;
-        padding: 2rem;
-    }
-}
-
-/* Additional Animations */
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
+/* Process Steps */
 .step {
-    animation: float 6s ease-in-out infinite;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(20px);
+    border-radius: 24px;
+    padding: 2rem;
+    margin: 1rem;
+    transition: transform 0.3s ease;
 }
 
-.step:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.step:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-/* Centrage global des textes */
-.glass-hero, 
-.premium, 
-.glass-section, 
-.service-card, 
-.footer-content,
-.glass-form,
-.form-group,
-.step,
-.benefits,
-.testimonials,
-.guarantees,
-.footer-section {
-    text-align: center;
-}
-
-/* Centrage des éléments de texte spécifiques */
-h1, h2, h3, h4, p {
-    text-align: center;
-}
-
-/* Exception pour les listes qui doivent rester alignées */
-.benefits li {
-    text-align: left;
-}
-
-/* Centrage des éléments de formulaire */
-.form-group label,
-.form-group input,
-.form-group select {
-    text-align: center;
-}
-
-/* Ajout de marges pour améliorer l'espacement */
-.service-card,
-.premium-card {
-    margin: 20px auto;
+.step-number {
+    background: linear-gradient(45deg, #4158D0, #C850C0);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0 auto 1.5rem;
 }
